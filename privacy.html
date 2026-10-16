@@ -28,8 +28,8 @@
         <h1 data-language="en" hidden>Calendar Hub<br>Privacy Policy</h1>
         <p class="hero-subtitle" data-language="ja">複数のカレンダー連携、対応する勤務表PDFの取込み、データの保存先について説明します。</p>
         <p class="hero-subtitle" data-language="en" hidden>This policy explains calendar integrations, work schedule PDF import, and where app data is stored.</p>
-        <p class="updated" data-language="ja">最終更新日: 2026年10月14日</p>
-        <p class="updated" data-language="en" hidden>Last updated: October 14, 2026</p>
+        <p class="updated" data-language="ja">最終更新日: 2026年10月16日</p>
+        <p class="updated" data-language="en" hidden>Last updated: October 16, 2026</p>
       </section>
 
       <div data-language="ja">
@@ -47,19 +47,25 @@
         <section class="section">
           <h2>カレンダー連携</h2>
           <p>ユーザーが連携するサービスと登録先を選び、予定の取得や登録を操作したときに、アプリはその機能に必要な情報を各サービスへ送信します。予定の編集・削除など、アプリが対応する操作も、ユーザーがアプリで実行した場合に行われます。</p>
-          <div class="notice"><p><strong>Google Calendar API:</strong> Googleとの接続では、カレンダー一覧や予定の表示、ユーザーが選択した予定の登録・編集・削除にGoogle Calendar APIを使用します。OAuthのアクセストークンとリフレッシュトークンは、端末のKeychainに保存します。</p><p>Googleユーザーデータは、ユーザーが要求したカレンダー機能の提供にのみ使用します。広告目的には使用しません。Google APIから受け取ったデータの利用は、<a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>（Limited Use要件を含む）に従います。</p></div>
-          <p>Notionのアクセストークンなどの認証情報は、アプリ内Aboutに記載のとおり、端末の安全な保存領域で管理します。</p>
+          <div class="notice"><p><strong>Google Calendar API:</strong> GoogleログインはmacOSではGoogle Sign-In SDK、iOSではOAuth PKCEを使用します。macOSのGoogle認証では、認証画面にGoogleアカウントの基本情報（氏名、メールアドレス、プロフィール画像など）の共有が表示される場合があります。Google Calendar APIは、カレンダー一覧や予定の表示と、ユーザーが選択した予定の登録・編集・削除に使用します。アクセストークンとリフレッシュトークンは端末のKeychainに保存します。</p><p>Googleユーザーデータは、ユーザーが要求したカレンダー機能の提供にのみ使用します。広告目的には使用しません。Google APIから受け取ったデータの利用は、<a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>（Limited Use要件を含む）に従います。</p></div>
+          <p>NotionはOAuthで接続し、Notionの承認画面で共有を許可したデータベースからアプリで登録先を選択します。認証コードの交換とリフレッシュトークンの更新はCloudflare Workerを経由します。WorkerはOAuth処理に必要なNotionのクライアントシークレットをWorker Secretとして保管し、Notion APIへ認証情報を送信します。初回接続時にNotionから返されたトークン応答は、端末へ渡すためWorkerのKVに一時保存し、アプリが読み出すと削除します。読み出されない場合も最長10分で期限切れになります。Notionのアクセストークン、リフレッシュトークン、ワークスペース名・IDは端末のKeychainに保存します。データベース一覧・プロパティ・予定の取得、および予定の登録・編集・削除は端末とNotion APIの間で行います。予定やデータベースの内容はWorkerへ送信・保存しません。</p><p>Notion OAuthの中継にCloudflare Workerを使用します。Cloudflareのインフラでは、通信の処理に必要な技術情報（IPアドレスなど）が扱われる場合があります。詳しくは<a href="https://www.cloudflare.com/privacypolicy/">Cloudflareのプライバシーポリシー</a>をご確認ください。</p>
         </section>
 
         <section class="section">
           <h2>保存と共有</h2>
-          <p>スキャンしたPDF、イベント設定、登録先の設定は端末に保存されます。iCloud同期を有効にした場合は、同期対象の設定と保存済みPDFがユーザー専用のiCloud領域に保存されます。Appleカレンダー、Googleカレンダー、Notionの情報が各サービスへ送信されるのは、ユーザーが接続・取得・登録を実行した場合です。</p>
+          <p>スキャンしたPDF、イベント設定、登録先の設定は端末に保存されます。iCloud同期を有効にした場合は、同期対象の設定と保存済みPDFがユーザー専用のiCloud領域に保存されます。Appleカレンダー、Googleカレンダー、Notionの情報は、ユーザーが接続・取得・登録・編集・削除を操作した場合に各サービスとの間で送受信されます。NotionのOAuth処理では認証情報がCloudflare Workerを通過しますが、予定やデータベース内容はWorkerに送信・保存されません。</p>
         </section>
 
         <section class="section">
           <h2>広告と外部サービス</h2>
           <p>このアプリは、ユーザーが選択したPDFやカレンダーの内容を広告目的で利用しません。各カレンダーサービスの利用や、各サービス上でのデータ保存には、それぞれのサービスのポリシーが適用されます。</p>
         </section>
+
+        <section class="section">
+          <h2>免責事項</h2>
+          <p>本アプリは予定管理を補助するもので、PDFの読み取り結果やカレンダー情報の正確性・完全性、常時利用できることを保証しません。予定の登録・編集・削除を確定する前に内容をご確認ください。外部サービスの仕様変更・障害、通信環境、端末やOSの状態により機能を利用できない場合があります。開発者の合理的な管理が及ばない外部サービスの停止・仕様変更や通信障害等に起因する利用不可・情報差異について、開発者は適用法令で認められる範囲で責任を負いません。本記載は法令上免除・制限できない責任や利用者の権利を免除・制限するものではありません。</p>
+        </section>
+
 
         <section class="section">
           <h2>お問い合わせ</h2>
@@ -82,19 +88,25 @@
         <section class="section">
           <h2>Calendar integrations</h2>
           <p>When a user selects an integrated service and destination and asks the app to fetch or register events, the app sends the information needed for that feature to the selected service. Event edits, deletions, and other supported actions are performed when the user requests them in the app.</p>
-          <div class="notice"><p><strong>Google Calendar API:</strong> The app uses the Google Calendar API to display calendar lists and events and to create, edit, or delete events selected by the user. OAuth access and refresh tokens are stored in the device's Keychain.</p><p>Google user data is used only to provide calendar features requested by the user and is not used for advertising. The app's use of data received from Google APIs follows the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including its Limited Use requirements.</p></div>
-          <p>Notion access tokens and other credentials are stored in the device's secure storage, as described in the in-app About section.</p>
+          <div class="notice"><p><strong>Google Calendar API:</strong> Google sign-in uses the Google Sign-In SDK on macOS and OAuth with PKCE on iOS. The macOS Google sign-in consent screen may ask to share basic Google Account information such as name, email address, and profile photo. The Google Calendar API is used to display calendar lists and events and to create, edit, or delete events selected by the user. Access and refresh tokens are stored in the device's Keychain.</p><p>Google user data is used only to provide calendar features requested by the user and is not used for advertising. The app's use of data received from Google APIs follows the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including its Limited Use requirements.</p></div>
+          <p>Notion connects through OAuth, and users choose a destination from databases they allowed on Notion's authorization screen. Authorization-code exchange and refresh-token renewal pass through a Cloudflare Worker. The Worker stores the Notion client secret as a Worker Secret and sends authentication details to the Notion API for OAuth processing. During initial connection, the token response from Notion is temporarily stored in Worker KV so it can be delivered to the device; it is deleted when retrieved and expires within 10 minutes if not retrieved. Notion access and refresh tokens and the workspace name and ID are stored in the device's Keychain. Database lists, properties, and events are fetched and event changes are sent between the device and Notion API. Event and database content is not sent to or stored by the Worker.</p><p>Cloudflare Worker relays Notion OAuth requests. Cloudflare's infrastructure may process technical information needed for network requests, such as IP addresses. See <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare's Privacy Policy</a> for details.</p>
         </section>
 
         <section class="section">
           <h2>Storage and sharing</h2>
-          <p>Scanned PDFs, event definitions, and destination settings are stored on the device. If iCloud sync is enabled, settings selected for sync and saved PDFs are stored in the user's private iCloud account. Information from Apple Calendar, Google Calendar, or Notion is sent to those services when the user connects, fetches, or registers information.</p>
+          <p>Scanned PDFs, event definitions, and destination settings are stored on the device. If iCloud sync is enabled, settings selected for sync and saved PDFs are stored in the user's private iCloud account. Information from Apple Calendar, Google Calendar, or Notion is sent to and received from those services when the user connects or uses fetch, create, edit, or delete features. Notion OAuth credentials pass through a Cloudflare Worker, but event and database content is not sent to or stored by the Worker.</p>
         </section>
 
         <section class="section">
           <h2>Advertising and external services</h2>
           <p>The app does not use PDFs or calendar contents selected by the user for advertising. Each calendar service's policies also apply to its services and the information stored there.</p>
         </section>
+
+        <section class="section">
+          <h2>Disclaimer</h2>
+          <p>The app is intended to assist with event management. It does not guarantee the accuracy or completeness of PDF extraction or calendar information, or uninterrupted availability. Review event details before confirming a creation, edit, or deletion. External service changes or outages, network conditions, or device or OS state may make features unavailable. To the extent permitted by applicable law, the developer is not responsible for unavailability or information differences caused by external service outages or changes, or network failures beyond the developer’s reasonable control. This notice does not exclude liability or limit user rights that cannot be excluded or limited by law.</p>
+        </section>
+
 
         <section class="section">
           <h2>Contact</h2>
