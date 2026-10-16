@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Calendar Hub（Cal Hub）のカレンダー接続、イベント登録、勤務表PDFの取込み、ウィジェット、iCloud同期の使い方です。">
+  <title>使い方ガイド | Calendar Hub</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="shell">
+    <header class="site-header">
+      <a class="brand" href="../" aria-label="Calendar Hub home">
+        <span class="brand-mark" aria-hidden="true">CH</span>
+        <span><span class="brand-name">Calendar Hub</span><span class="brand-caption">CAL HUB</span></span>
+      </a>
+      <div class="language-switch" role="group" aria-label="Language">
+        <button type="button" data-set-language="en" aria-pressed="false">English</button>
+        <button type="button" data-set-language="ja" aria-pressed="true">日本語</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <p class="eyebrow" data-language="ja">使い方 / カレンダー / 勤務表PDF</p>
+        <p class="eyebrow" data-language="en" hidden>USER GUIDE / CALENDARS / SCHEDULE PDF</p>
+        <h1 data-language="ja">Calendar Hub<br>使い方ガイド</h1>
+        <h1 data-language="en" hidden>Calendar Hub<br>User Guide</h1>
+        <p class="hero-subtitle" data-language="ja">カレンダーの接続から予定の登録、勤務表PDFの取込みまでをご案内します。</p>
+        <p class="hero-subtitle" data-language="en" hidden>Learn how to connect calendars, manage events, and import work schedule PDFs.</p>
+      </section>
+
+      <div data-language="ja">
+        <p class="intro">Calendar Hubは、Appleカレンダー、Googleカレンダー、Notionデータベースのいずれかを選んで予定を管理します。各サービスの接続先を設定してから、カレンダー画面で予定を表示・登録してください。</p>
+
+        <section class="section">
+          <h2>1. カレンダーを接続する</h2>
+          <p>アプリの「設定」から「カレンダー設定」を開き、登録先を選びます。予定の登録先はカレンダー画面上部の登録先メニューからも切り替えられます。</p>
+          <div class="card-grid">
+            <article class="card"><p class="card-index">APPLE CALENDAR</p><h3>Appleカレンダー</h3><p>カレンダーへのアクセスを許可し、「カレンダー一覧を取得」を押して一覧から登録先を選びます。アクセスを拒否した場合は、端末のシステム設定でCalendar Hubのカレンダーアクセスを許可してください。</p></article>
+            <article class="card"><p class="card-index">GOOGLE CALENDAR</p><h3>Googleカレンダー</h3><p>「Googleにログイン」を押してGoogleアカウントを選び、カレンダーへのアクセスを許可します。アプリに戻ったら「カレンダー一覧を取得」を押し、登録先を選択してください。</p></article>
+            <article class="card"><p class="card-index">NOTION</p><h3>Notionデータベース</h3><p>「Notionに接続」からNotionへログインし、共有するデータベースを許可します。アプリに戻ってデータベース一覧を取得し、対象を選択します。続けてタイトル列と日付列を設定してください。タグや追加プロパティは必要に応じて設定できます。</p></article>
+          </div>
+          <div class="notice"><p>Notionで共有を許可したデータベースだけがCal Hubに表示されます。目的のデータベースが見つからない場合は、Notionの接続画面でそのデータベースへのアクセスを許可してから、一覧を再取得してください。</p></div>
+        </section>
+
+        <section class="section">
+          <h2>2. 予定を登録・編集・削除する</h2>
+          <div class="card-grid">
+            <article class="card"><h3>手入力で登録</h3><p>カレンダー画面の「＋」または日付の操作メニューから「イベントを登録」を選び、タイトルと開始・終了日時を入力します。登録前に登録先カレンダーを確認してください。</p></article>
+            <article class="card"><h3>保存したイベントから登録</h3><p>よく使うイベント名と時間は、設定の「イベント管理」に保存できます。カレンダーで日付を選び、「イベント一覧から選択」から登録するイベントを選びます。複数の日付を選択して、同じイベントをまとめて登録することもできます。</p></article>
+            <article class="card"><h3>編集・削除</h3><p>カレンダー上の編集可能な予定を選び、「編集」または「削除」を選択します。削除は確認してから実行してください。祝日など一部の表示専用項目は編集・削除できません。</p></article>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>3. 勤務表PDFから予定を登録する</h2>
+          <div class="card">
+            <ol>
+              <li>「PDFスキャン」を開き、「PDFを選択」から勤務表を読み込みます。</li>
+              <li>アプリに登録した名前に合う行または列と日付が読み取られます。必要に応じて名前を指定し、抽出結果をカレンダー表示または一覧表示で確認します。</li>
+              <li>勤務表の記号がイベント設定にない場合は、イベント名と時間を設定するか、その項目を登録対象から外します。</li>
+              <li>表示内容を確認し、登録先を選んでカレンダーへ登録します。「休」の予定を含めるかは登録時に選択できます。</li>
+            </ol>
+          </div>
+          <div class="notice">
+            <p><strong>PDFの条件:</strong>文字を選択・コピーできる文字情報があり、氏名と日付が表形式で並んでいるPDFが対象です。日付が横または縦に連続する対応レイアウトを読み取ります。スキャン画像だけのPDFや、表構造・日付を判別できないPDFには対応していません。</p>
+            <p>PDFから年月を取得できない場合は、ファイル名を「2026-01.pdf」のような「YYYY-MM.pdf」形式にしてください。</p>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>4. ウィジェット、Apple Watch、iCloud</h2>
+          <div class="card-grid">
+            <article class="card"><h3>ウィジェットとApple Watch</h3><p>端末のウィジェット追加画面からCalendar Hubのウィジェットを配置します。iPhoneとペアリングしたApple Watchでは、Watchアプリや文字盤のコンプリケーションから予定を確認できます。</p></article>
+            <article class="card"><h3>iCloud同期</h3><p>新規インストールではオフです。有効にするとアプリ設定と保存済みPDFをiCloudで同期します。カレンダー上の予定とログイン情報は同期しません。同期をオフにしても既存のiCloudデータは残ります。削除する場合は「設定」&gt;「一般」&gt;「iCloud同期データを削除」を使ってください。</p></article>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>うまくいかないとき</h2>
+          <div class="card-grid">
+            <article class="card"><h3>カレンダーやDBが一覧に出ない</h3><p>接続状態とサービス側のアクセス許可を確認し、「カレンダー一覧を取得」または「データベース一覧を取得」をもう一度実行してください。</p></article>
+            <article class="card"><h3>PDFから予定が見つからない</h3><p>PDF内の文字を選択できること、設定した名前がPDF内にあること、日付と表の並びが対応形式であることを確認してください。年月が取得できないときはファイル名も確認してください。</p></article>
+          </div>
+          <div class="link-panel"><div><strong>解決しない場合</strong><p>問題の内容と操作手順をメールでお知らせください。</p></div><a class="link-button" href="mailto:output@unwraps.net?subject=Calendar%20Hub%20Support">サポートへメール</a></div>
+        </section>
+      </div>
+
+      <div data-language="en" hidden>
+        <p class="intro">Calendar Hub lets you choose Apple Calendar, Google Calendar, or a Notion database as your event destination. Set up a connection first, then view and manage events in the calendar screen.</p>
+
+        <section class="section">
+          <h2>1. Connect a calendar</h2>
+          <p>Open Calendar Settings from the app's Settings and choose a destination. You can also switch the destination from the menu at the top of the calendar screen.</p>
+          <div class="card-grid">
+            <article class="card"><p class="card-index">APPLE CALENDAR</p><h3>Apple Calendar</h3><p>Allow calendar access, choose Fetch Calendar List, and select a destination. If access was denied, allow Calendar Hub to access calendars in your device's system settings.</p></article>
+            <article class="card"><p class="card-index">GOOGLE CALENDAR</p><h3>Google Calendar</h3><p>Choose Sign in with Google, select your account, and allow calendar access. Return to the app, fetch the calendar list, and select a destination.</p></article>
+            <article class="card"><p class="card-index">NOTION</p><h3>Notion database</h3><p>Choose Connect to Notion, sign in, and allow access to the databases you want to share. Return to the app, fetch the database list, and select a database. Then choose its title and date properties. Tag and additional properties are optional.</p></article>
+          </div>
+          <div class="notice"><p>Only databases allowed on Notion's authorization screen appear in Cal Hub. If a database is missing, grant access to it in Notion and fetch the list again.</p></div>
+        </section>
+
+        <section class="section">
+          <h2>2. Create, edit, and delete events</h2>
+          <div class="card-grid">
+            <article class="card"><h3>Create an event manually</h3><p>Choose the plus button on the calendar screen, or open a date's action menu and select “Register event.” Enter a title and start and end times. Check the destination before saving.</p></article>
+            <article class="card"><h3>Register a saved event</h3><p>Save frequently used event names and times in Event Management in Settings. Choose a date, select “Choose from event list,” and pick an event. You can select multiple dates to register the same event on them.</p></article>
+            <article class="card"><h3>Edit or delete</h3><p>Select an editable event on the calendar and choose Edit or Delete. Confirm before deleting. Some display-only items, such as holidays, cannot be edited or deleted.</p></article>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>3. Register events from a work schedule PDF</h2>
+          <div class="card">
+            <ol>
+              <li>Open PDF Scan, select “Choose PDF,” and pick a work schedule file.</li>
+              <li>Cal Hub reads the row or column matching the name saved in the app and the dates. Review the results in calendar or list view.</li>
+              <li>If a shift label is not defined in Event Management, configure its event name and time when prompted, or choose not to register it.</li>
+              <li>Review the results, choose the destination, and register them. You can choose whether to include days off.</li>
+            </ol>
+          </div>
+          <div class="notice">
+            <p><strong>PDF requirements:</strong>The PDF must contain selectable text and a table with names and dates in a supported layout. Cal Hub reads supported tables where dates run horizontally or vertically. Image-only scans and layouts whose table or date order cannot be identified are not supported.</p>
+            <p>If the year and month cannot be read from the PDF, name the file in YYYY-MM.pdf format, such as 2026-01.pdf.</p>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>4. Widgets, Apple Watch, and iCloud</h2>
+          <div class="card-grid">
+            <article class="card"><h3>Widgets and Apple Watch</h3><p>Add a Calendar Hub widget using your device's widget gallery. On a paired Apple Watch, check events in the Watch app or with a complication on the watch face.</p></article>
+            <article class="card"><h3>iCloud sync</h3><p>Sync is off by default for new installations. When enabled, it syncs app settings and saved PDFs. Calendar events and sign-in credentials are not synced. Turning sync off leaves existing iCloud data in place. To delete it, choose Delete iCloud Sync Data in Settings &gt; General.</p></article>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>Troubleshooting</h2>
+          <div class="card-grid">
+            <article class="card"><h3>A calendar or database is missing</h3><p>Check the connection and service permissions, then fetch the calendar or database list again.</p></article>
+            <article class="card"><h3>No events were found in the PDF</h3><p>Check that PDF text can be selected, the saved name appears in it, and the table and date layout is supported. If the month was not detected, check the file name too.</p></article>
+          </div>
+          <div class="link-panel"><div><strong>Still need help?</strong><p>Email us with the issue and the steps that led to it.</p></div><a class="link-button" href="mailto:output@unwraps.net?subject=Calendar%20Hub%20Support">Email support</a></div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <span>Calendar Hub / Cal Hub</span>
+      <nav class="footer-links" aria-label="Related pages">
+        <a href="../" data-language="ja">ホーム</a><a href="../" data-language="en" hidden>Home</a>
+        <a href="../support/" data-language="ja">サポート</a><a href="../support/" data-language="en" hidden>Support</a>
+        <a href="../privacypolicy/" data-language="ja">プライバシーポリシー</a><a href="../privacypolicy/" data-language="en" hidden>Privacy Policy</a>
+      </nav>
+    </footer>
+  </div>
+  <script src="../language.js"></script>
+</body>
+</html>
