@@ -22,6 +22,7 @@
       </div>
     </header>
 
+
     <main>
       <section class="hero">
         <p class="eyebrow" data-language="ja">データの取り扱い</p>
@@ -34,8 +35,10 @@
         <p class="updated" data-language="en" hidden>Last updated: October 27, 2026</p>
       </section>
 
+
       <div data-language="ja">
         <p class="intro">Calendar Base（Cal Base）は、Appleカレンダー、Googleカレンダー、Notionデータベースを切り替えて予定を管理するアプリです。対応するPDFから予定を取り込んで選択中の登録先へ登録する機能もあります。このポリシーでは、アプリが扱う情報と保存先を説明します。</p>
+
 
         <section class="section">
           <h2>アプリが扱う情報</h2>
@@ -46,6 +49,7 @@
           </div>
         </section>
 
+
         <section class="section">
           <h2>カレンダー連携</h2>
           <p>ユーザーが連携するサービスと登録先を選ぶと、アプリは手動操作に応じて情報を各サービスへ送受信します。バックグラウンド取得を有効にしている場合は設定した間隔を目安に自動取得しますが、実行時刻は端末やOSの状態・システムのスケジューリング判断によって前後します。ウィジェット更新のためにカレンダー情報を取得する場合もあります。予定の登録・編集・削除は、ユーザーがアプリで実行した場合に行われます。</p>
@@ -55,30 +59,36 @@
           <p>Notion OAuthの中継にCloudflare Workerを使用します。Cloudflareのインフラでは、通信の処理に必要な技術情報（IPアドレスなど）が扱われる場合があります。詳しくは<a href="https://www.cloudflare.com/privacypolicy/">Cloudflareのプライバシーポリシー</a>をご確認ください。</p>
         </section>
 
+
         <section class="section">
           <h2>保存と共有</h2>
-          <p>スキャンしたPDF、イベント設定、接続先設定、カレンダー表示用キャッシュ、登録・削除の操作履歴は端末内に保存されます。iCloud同期は新規インストール時にオフです。有効にすると、同期対象のアプリ設定、保存済みPDF、操作履歴をAppleが提供するユーザー専用のiCloud領域へ保存します。操作履歴は変更時に同期し、他の同期端末でも確認できます。接続先サービスの選択は端末ごとに設定し、カレンダー全体の表示用キャッシュやOAuthトークンはiCloud同期しません。</p>
+          <p>スキャンしたPDF、イベント設定、接続先設定、カレンダー表示用キャッシュ、登録・削除の操作履歴は端末内に保存されます。iCloud同期は新規インストール時にオフです。有効にすると、同期対象のアプリ設定、保存済みPDF、操作履歴をAppleが提供するユーザー専用のiCloud領域へ保存します。iCloud同期が有効な場合、操作履歴は同じApple Accountを使う端末間で変更時に同期されます。別のApple Accountを使う端末とは共有されません。接続先サービスの選択は端末ごとに設定し、カレンダー全体の表示用キャッシュやOAuthトークンはiCloud同期しません。</p>
           <p>同期をオフにしても既存のiCloudデータと端末内のデータは残ります。iCloud上の同期データ全体を削除する場合は、同期をオフにした後、「設定」&gt;「一般」&gt;「同期データの操作」&gt;「iCloud同期データを削除」を使ってください。iCloud上の設定・保存済みPDF・操作履歴などの同期レコードを削除しますが、この端末内の設定・PDF・履歴は残ります。再度同期を有効にすると、端末内に残るデータがiCloudへ保存される場合があります。削除が完了しなかった場合はアプリに結果を表示します。</p>
           <p>ウィジェット用のイベントスナップショットはアプリとウィジェットが共有する端末内領域に保存され、iPhoneでは表示用データをペアリング済みApple Watchへ送信してWatch側にも保存します。Notion OAuthの認証情報はCloudflare Workerを通過しますが、予定・データベース内容はWorkerへ送信・保存しません。</p>
         </section>
 
 
+
+
         <section class="section">
           <h2>操作履歴と保存期間</h2>
-          <p>履歴は、アプリで実行した予定の登録・削除とその結果を確認するために保存します。操作日時、登録先サービスと設定（カレンダー・データベースの識別子やプロパティ設定など）、予定の識別子、タイトル・日時・メモ・場所・URL・タグ・追加プロパティなどの入力内容、処理結果・エラー内容を含む場合があります。認証トークンは履歴に含めません。iCloud同期を有効にした場合は、この履歴もAppleのユーザー専用iCloud領域へ送信します。開発者のサーバーや広告・解析事業者へ履歴を送信することはありません。</p>
+          <p>履歴は、アプリで実行した予定の登録・削除とその結果を確認するために保存します。操作日時、登録先サービスと設定（カレンダー・データベースの識別子やプロパティ設定など）、予定の識別子、タイトル・日時・メモ・場所・URL・タグ・追加プロパティなどの入力内容、処理結果・エラー内容を含む場合があります。認証トークンは履歴に含めません。iCloud同期を有効にすると、同じApple Accountで同期が有効な端末間で履歴を共有するため、この履歴もAppleのユーザー専用iCloud領域へ送信します。別のApple Accountを使う端末とは共有されません。開発者のサーバーや広告・解析事業者へ履歴を送信することはありません。</p>
           <p>端末内および同期される履歴は、直近50回の操作・予定合計1,000件を上限に保存し、古い履歴は順次削除します。表示用キャッシュの30日という保存期間とは別に管理します。「設定」&gt;「一般」&gt;「操作履歴」&gt;「履歴を消去」から履歴を消去できます。iCloud同期が有効な場合、履歴の消去もiCloud上と他の同期端末へ反映します。同期がオフの端末には、その端末で消去するか再度同期するまで履歴が残ります。</p>
           <p>履歴を消去しても、Appleカレンダー、Googleカレンダー、Notion上の予定は変更・削除されません。履歴は過去の操作に関する記録であり、登録先の予定が現在も同じ状態であることを保証するものではありません。</p>
         </section>
+
 
         <section class="section">
           <h2>広告と外部サービス</h2>
           <p>このアプリは、ユーザーが選択したPDFやカレンダーの内容を広告目的で利用しません。各カレンダーサービスの利用や、各サービス上でのデータ保存には、それぞれのサービスのポリシーが適用されます。</p>
         </section>
 
+
         <section class="section">
           <h2>免責事項</h2>
           <p>本アプリは予定管理を補助するもので、PDFの読み取り結果やカレンダー情報の正確性・完全性、常時利用できることを保証しません。予定の登録・編集・削除を確定する前に内容をご確認ください。外部サービスの仕様変更・障害、通信環境、端末やOSの状態により機能を利用できない場合があります。開発者の合理的な管理が及ばない外部サービスの停止・仕様変更や通信障害等に起因する利用不可・情報差異について、開発者は適用法令で認められる範囲で責任を負いません。本記載は法令上免除・制限できない責任や利用者の権利を免除・制限するものではありません。</p>
         </section>
+
 
         <section class="section">
           <h2>お問い合わせ</h2>
@@ -86,8 +96,10 @@
         </section>
       </div>
 
+
       <div data-language="en" hidden>
         <p class="intro">Calendar Base (Cal Base) lets users switch between Apple Calendar, Google Calendar, and Notion databases to manage events. It also supports importing events from compatible PDFs into the selected destination. This policy explains the information handled by the app and where it is stored.</p>
+
 
         <section class="section">
           <h2>Information handled by the app</h2>
@@ -98,6 +110,7 @@
           </div>
         </section>
 
+
         <section class="section">
           <h2>Calendar integrations</h2>
           <p>When a user selects a service and destination, the app exchanges information with that service in response to user actions. If background refresh is enabled, the app requests automatic updates based on the selected interval, but actual timing may vary with the device, OS, and system scheduling. Calendar information may also be fetched to update widgets. Event creation, editing, and deletion occur when the user requests them in the app.</p>
@@ -107,30 +120,36 @@
           <p>Cloudflare Worker is used to relay Notion OAuth requests. Cloudflare's infrastructure may process technical information needed for network requests, such as IP addresses. See <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare's Privacy Policy</a> for details.</p>
         </section>
 
+
         <section class="section">
           <h2>Storage and sharing</h2>
-          <p>Scanned PDFs, event definitions, destination settings, calendar display caches, and registration/deletion history are stored on the device. iCloud sync is off by default for new installations. When enabled, syncable app settings, saved PDFs, and operation history are stored in the user’s private iCloud storage provided by Apple. History syncs when it changes and can be reviewed on other syncing devices. The connection service is selected separately on each device; the full calendar display cache and OAuth tokens are not synced through iCloud.</p>
+          <p>Scanned PDFs, event definitions, destination settings, calendar display caches, and registration/deletion history are stored on the device. iCloud sync is off by default for new installations. When enabled, syncable app settings, saved PDFs, and operation history are stored in the user’s private iCloud storage provided by Apple. History syncs when it changes between devices using the same Apple Account with iCloud Sync enabled. Devices using a different Apple Account do not share history. The connection service is selected separately on each device; the full calendar display cache and OAuth tokens are not synced through iCloud.</p>
           <p>Turning sync off leaves existing iCloud data and local data in place. To delete all synced data in iCloud, turn sync off, then choose Settings &gt; General &gt; Sync Data Options &gt; Delete iCloud Sync Data. This deletes synced records such as settings, saved PDFs, and operation history from iCloud, while retaining settings, PDFs, and history on this device. If sync is enabled again, data remaining on the device may be uploaded to iCloud again. The app reports if deletion could not be completed.</p>
           <p>Widget event snapshots are stored in a local area shared with the widget; on iPhone, display data is sent to a paired Apple Watch and stored on the Watch. Notion OAuth credentials pass through a Cloudflare Worker, but event and database content is not sent to or stored by the Worker.</p>
         </section>
 
 
+
+
         <section class="section">
           <h2>Operation history and retention</h2>
-          <p>History is stored so users can review event registrations and deletions performed in the app and their results. It may include action times, destination services and settings (such as calendar or database identifiers and property mappings), event identifiers, entered event details such as titles, dates and times, notes, locations, URLs, tags and additional properties, and results and error details. Authentication tokens are not included. When iCloud sync is enabled, this history is also sent to the user’s private iCloud storage provided by Apple. History is not sent to a developer-operated server or advertising or analytics providers.</p>
+          <p>History is stored so users can review event registrations and deletions performed in the app and their results. It may include action times, destination services and settings (such as calendar or database identifiers and property mappings), event identifiers, entered event details such as titles, dates and times, notes, locations, URLs, tags and additional properties, and results and error details. Authentication tokens are not included. When iCloud sync is enabled, this history is sent to the user’s private iCloud storage provided by Apple and shared only with devices using the same Apple Account with iCloud Sync enabled. Devices using a different Apple Account do not share it. History is not sent to a developer-operated server or advertising or analytics providers.</p>
           <p>Local and synced history is limited to 50 recent actions and 1,000 event results in total, with older entries removed as needed. This is separate from the 30-day retention of the display cache. Clear history in Settings &gt; General &gt; Action History &gt; Clear History. When iCloud sync is enabled, clearing history also applies to iCloud and other syncing devices. A device with sync turned off retains its history until it is cleared on that device or sync is enabled again.</p>
           <p>Clearing history does not change or delete events in Apple Calendar, Google Calendar, or Notion. History records past actions and does not guarantee the current state of events in the destination service.</p>
         </section>
+
 
         <section class="section">
           <h2>Advertising and external services</h2>
           <p>The app does not use PDFs or calendar contents selected by the user for advertising. Each calendar service's policies also apply to its services and the information stored there.</p>
         </section>
 
+
         <section class="section">
           <h2>Disclaimer</h2>
           <p>The app is intended to assist with event management. It does not guarantee the accuracy or completeness of PDF extraction or calendar information, or uninterrupted availability. Review details before confirming an event creation, edit, or deletion. Changes or outages affecting external services, network conditions, or device or OS state may make features unavailable. To the extent permitted by applicable law, the developer is not responsible for unavailability or information differences caused by external service outages or changes, or network failures beyond the developer's reasonable control. This notice does not exclude liability or limit user rights that cannot be excluded or limited by law.</p>
         </section>
+
 
         <section class="section">
           <h2>Contact</h2>
@@ -138,6 +157,7 @@
         </section>
       </div>
     </main>
+
 
     <footer class="site-footer">
       <span>Calendar Base / Cal Base</span>
