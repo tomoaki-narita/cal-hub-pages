@@ -23,6 +23,8 @@
     </header>
 
 
+
+
     <main>
       <section class="hero">
         <p class="eyebrow" data-language="ja">データの取り扱い</p>
@@ -31,13 +33,17 @@
         <h1 data-language="en" hidden>Calendar Base<br>Privacy Policy</h1>
         <p class="hero-subtitle" data-language="ja">複数のカレンダー連携、対応するPDFの取込み、データの保存先について説明します。</p>
         <p class="hero-subtitle" data-language="en" hidden>This policy explains calendar integrations, compatible PDF import, and where app data is stored.</p>
-        <p class="updated" data-language="ja">最終更新日: 2026年10月27日</p>
-        <p class="updated" data-language="en" hidden>Last updated: October 27, 2026</p>
+        <p class="updated" data-language="ja">最終更新日: 2026年10月29日</p>
+        <p class="updated" data-language="en" hidden>Last updated: October 29, 2026</p>
       </section>
+
+
 
 
       <div data-language="ja">
         <p class="intro">Calendar Base（Cal Base）は、Appleカレンダー、Googleカレンダー、Notionデータベースを切り替えて予定を管理するアプリです。対応するPDFから予定を取り込んで選択中の登録先へ登録する機能もあります。このポリシーでは、アプリが扱う情報と保存先を説明します。</p>
+
+
 
 
         <section class="section">
@@ -50,6 +56,8 @@
         </section>
 
 
+
+
         <section class="section">
           <h2>カレンダー連携</h2>
           <p>ユーザーが連携するサービスと登録先を選ぶと、アプリは手動操作に応じて情報を各サービスへ送受信します。バックグラウンド取得を有効にしている場合は設定した間隔を目安に自動取得しますが、実行時刻は端末やOSの状態・システムのスケジューリング判断によって前後します。ウィジェット更新のためにカレンダー情報を取得する場合もあります。予定の登録・編集・削除は、ユーザーがアプリで実行した場合に行われます。</p>
@@ -58,6 +66,8 @@
           <p>Notionの承認画面では、ワークスペースのユーザー名やメールアドレスの表示を許可するよう求められる場合があります。Cal Baseはこのプロフィール情報をAPIから取得・利用・保存しません。</p>
           <p>Notion OAuthの中継にCloudflare Workerを使用します。Cloudflareのインフラでは、通信の処理に必要な技術情報（IPアドレスなど）が扱われる場合があります。詳しくは<a href="https://www.cloudflare.com/privacypolicy/">Cloudflareのプライバシーポリシー</a>をご確認ください。</p>
         </section>
+
+
 
 
         <section class="section">
@@ -70,6 +80,10 @@
 
 
 
+
+
+
+
         <section class="section">
           <h2>操作履歴と保存期間</h2>
           <p>履歴は、アプリで実行した予定の登録・削除とその結果を確認するために保存します。操作日時、登録先サービスと設定（カレンダー・データベースの識別子やプロパティ設定など）、予定の識別子、タイトル・日時・メモ・場所・URL・タグ・追加プロパティなどの入力内容、処理結果・エラー内容を含む場合があります。認証トークンは履歴に含めません。iCloud同期を有効にすると、同じApple Accountで同期が有効な端末間で履歴を共有するため、この履歴もAppleのユーザー専用iCloud領域へ送信します。別のApple Accountを使う端末とは共有されません。開発者のサーバーや広告・解析事業者へ履歴を送信することはありません。</p>
@@ -78,16 +92,22 @@
         </section>
 
 
+
+
         <section class="section">
           <h2>広告と外部サービス</h2>
           <p>このアプリは、ユーザーが選択したPDFやカレンダーの内容を広告目的で利用しません。各カレンダーサービスの利用や、各サービス上でのデータ保存には、それぞれのサービスのポリシーが適用されます。</p>
         </section>
 
 
+
+
         <section class="section">
           <h2>免責事項</h2>
           <p>本アプリは予定管理を補助するもので、PDFの読み取り結果やカレンダー情報の正確性・完全性、常時利用できることを保証しません。予定の登録・編集・削除を確定する前に内容をご確認ください。外部サービスの仕様変更・障害、通信環境、端末やOSの状態により機能を利用できない場合があります。開発者の合理的な管理が及ばない外部サービスの停止・仕様変更や通信障害等に起因する利用不可・情報差異について、開発者は適用法令で認められる範囲で責任を負いません。本記載は法令上免除・制限できない責任や利用者の権利を免除・制限するものではありません。</p>
         </section>
+
+
 
 
         <section class="section">
@@ -97,8 +117,12 @@
       </div>
 
 
+
+
       <div data-language="en" hidden>
         <p class="intro">Calendar Base (Cal Base) lets users switch between Apple Calendar, Google Calendar, and Notion databases to manage events. It also supports importing events from compatible PDFs into the selected destination. This policy explains the information handled by the app and where it is stored.</p>
+
+
 
 
         <section class="section">
@@ -111,6 +135,8 @@
         </section>
 
 
+
+
         <section class="section">
           <h2>Calendar integrations</h2>
           <p>When a user selects a service and destination, the app exchanges information with that service in response to user actions. If background refresh is enabled, the app requests automatic updates based on the selected interval, but actual timing may vary with the device, OS, and system scheduling. Calendar information may also be fetched to update widgets. Event creation, editing, and deletion occur when the user requests them in the app.</p>
@@ -119,6 +145,8 @@
           <p>Notion's authorization screen may ask for permission to view workspace users' names and email addresses. Cal Base does not retrieve, use, or store this profile information through the API.</p>
           <p>Cloudflare Worker is used to relay Notion OAuth requests. Cloudflare's infrastructure may process technical information needed for network requests, such as IP addresses. See <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare's Privacy Policy</a> for details.</p>
         </section>
+
+
 
 
         <section class="section">
@@ -131,6 +159,10 @@
 
 
 
+
+
+
+
         <section class="section">
           <h2>Operation history and retention</h2>
           <p>History is stored so users can review event registrations and deletions performed in the app and their results. It may include action times, destination services and settings (such as calendar or database identifiers and property mappings), event identifiers, entered event details such as titles, dates and times, notes, locations, URLs, tags and additional properties, and results and error details. Authentication tokens are not included. When iCloud sync is enabled, this history is sent to the user’s private iCloud storage provided by Apple and shared only with devices using the same Apple Account with iCloud Sync enabled. Devices using a different Apple Account do not share it. History is not sent to a developer-operated server or advertising or analytics providers.</p>
@@ -139,10 +171,14 @@
         </section>
 
 
+
+
         <section class="section">
           <h2>Advertising and external services</h2>
           <p>The app does not use PDFs or calendar contents selected by the user for advertising. Each calendar service's policies also apply to its services and the information stored there.</p>
         </section>
+
+
 
 
         <section class="section">
@@ -151,12 +187,16 @@
         </section>
 
 
+
+
         <section class="section">
           <h2>Contact</h2>
           <p>For privacy or data handling questions, contact us through the <a href="../support/">Support page</a>. Remove personal or confidential information before including any data in a support request.</p>
         </section>
       </div>
     </main>
+
+
 
 
     <footer class="site-footer">
